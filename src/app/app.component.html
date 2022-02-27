@@ -1,0 +1,39 @@
+<table>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let col of cols" id="#cell{{ row }}_{{ col }}">
+        {{ row }} {{ col }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button (click)="setElementColor(2, 8, 'yellow')">Set Row Color(2,8)</button
+  ><br />
+  <button (click)="setElementColor(4, 8, 'blue')">Set Row Color(4,8)</button
+  ><br />
+  <button (click)="setElementColor(5, 9, 'blue')">Set Row Color(5,9)</button
+  ><br />
+  <button (click)="setElementColor(3, 6, 'green')">Set Row Color(3,6)</button
+  ><br />
+  <hr />
+</div>
+<div>
+  <button (click)="fillColor('blue', 'row', 3, 2, 7)">
+    setRowColorBasedOnRange('blue', 'row', 3,2, 7)</button
+  ><br />
+  <button (click)="fillColor('blue', 'row', 4, 5, 6)">
+    setRowColorBasedOnRange('blue', 4, 5, 6)</button
+  ><br />
+  <hr />
+</div>
+<div>
+  <button (click)="fillColor('green', 'col', 3, 2, 6)">
+    setColumnColorBasedOnRange('green', 'col', 3, 2, 6)</button
+  ><br />
+  <hr />
+</div>
+<div>
+  <button (click)="flood(3, 6, 'red')">flood('red', 3, 6)</button>
+</div>
+<router-outlet></router-outlet>
